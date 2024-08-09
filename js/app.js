@@ -9,8 +9,9 @@ window.onresize = (event) => {
 };
 
 function startScrolling() {
-  const scroll = document.querySelector(".scroll");
+  const scroll = document.querySelector(".scrolls .scroll");
   const scrollWidth = scroll.getBoundingClientRect().width;
+  console.log(scrollWidth)
 
   const ANIMATION_PARAMS = {
     duration: 10,
@@ -21,6 +22,6 @@ function startScrolling() {
 
   timeline?.kill(); // Stop current timeline
   timeline = gsap.timeline(); // Create new timeline
-  timeline.set(".scroll", { x: 0 }); // Set scroll back to start
-  timeline.to(".scroll", ANIMATION_PARAMS); // Animate
+  timeline.set(".scrolls .scroll", { x: 0 }); // Set scroll back to start
+  timeline.to(".scrolls .scroll", ANIMATION_PARAMS); // Animate
 }

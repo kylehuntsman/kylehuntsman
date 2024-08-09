@@ -8,36 +8,94 @@
 body {
   background-color: #252525;
   display: flex;
-  justify-content: left;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   text-overflow: clip;
   overflow: hidden;
   position: relative;
   white-space: nowrap;
 }
 
+.scrolls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .scroll span {
   font-family: "Poppins", sans-serif;
   color: #f5f5f5;
   text-align: center;
-  font-size: 30vmin;
+  font-size: 128px;
   font-weight: bolder;
-  padding: 0 3vmin;
+  padding: 0 16px;
 }
 
-#my-hands {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 0 6px;
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 32px;
+}
+.description p {
+  color: #f5f5f5;
+  opacity: 0.25;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  white-space: normal;
+  text-align: center;
 }
 
-#my-hands a {
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+}
+.info .links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.info .links .divider {
+  color: #f5f5f5;
+  opacity: 0.25;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+.info .links a {
   text-decoration: none;
   color: #f5f5f5;
   opacity: 0.25;
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
-  font-size: 1em;
+  font-size: 16px;
+  padding: 0 16px;
+}
+.info .nostr-pub-key {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+  color: #f5f5f5;
+  opacity: 0.25;
+  font-family: "Poppins", sans-serif;
+}
+.info .nostr-pub-key .label {
+  font-size: 16px;
+  font-weight: bolder;
+  padding-right: 4px;
+}
+.info .nostr-pub-key .pubkey {
+  font-size: 12px;
+  padding: 0 32px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */
