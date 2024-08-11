@@ -1,0 +1,111 @@
+$black: #252525;
+$white: #f5f5f5;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $black;
+}
+
+#on-mobile {
+  padding: 16px;
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  row-gap: 8px;
+  height: 80vh;
+  overflow: hidden;
+}
+
+#not-on-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 812px) {
+  #on-mobile {
+    display: none;
+  }
+
+  #not-on-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+h1 {
+  all: unset;
+  font-family: "Poppins", sans-serif;
+  color: $white;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bolder;
+  padding: 0 16px;
+}
+
+h2 {
+  all: unset;
+  font-family: "Poppins", sans-serif;
+  color: $white;
+  opacity: 0.25;
+  text-align: center;
+  font-size: 24px;
+  padding: 0 16px;
+}
+
+#qrcode {
+  margin: 64px;
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+  box-sizing: content-box;
+  
+  border: solid 20px #f5f5f520;
+  border-radius: 15px;
+  padding: 30px;
+  --s: 100px;
+  mask:
+    conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+    0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+    linear-gradient(#000 0 0) content-box;
+}
+
+.link {
+  text-decoration: none;
+  color: $white;
+  opacity: 0.25;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+}
+
+.app-link {
+  display: inline-block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+
+  background-color: $white;
+  border-radius: 10px;
+  
+  font-size: 32px;
+  color: $black;
+  text-align: center;
+}
+
+.back-link {
+  font-size: 20px;
+}

@@ -22,20 +22,46 @@
   </div>
 
   <div class="info">
-    <div class="links">
+    <span class="links">
       <a href="https://github.com/kylehuntsman" target="_blank">GitHub</a>
       <span class="divider">|</span>
       <a href="https://www.linkedin.com/in/huntsmankyle/" target="_blank">LinkedIn</a>
       <span class="divider">|</span>
       <a href="/bitcoin.pdf" target="_blank">BTC</a>
-    </div>
-    <!-- <div class="nostr-pub-key">
-      <span>Find me on <span class="label">Nostr</span></span>
-      <span class="pubkey">npub1sg6plzptd64u62a878hep2kev88swjh3tw00gjsfl8f237lmu63q0uf63m</span>
-    </div> -->
+      <span class="divider">|</span>
+      <a href="/pay">Pay</a>
+    </span>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-  <script src="/js/app.js"></script>
+  <script>
+    let timeline;
+
+    window.onload = (event) => {
+      startScrolling();
+    };
+
+    window.onresize = (event) => {
+      startScrolling();
+    };
+
+    function startScrolling() {
+      const scroll = document.querySelector(".scrolls .scroll");
+      const scrollWidth = scroll.getBoundingClientRect().width;
+      console.log(scrollWidth)
+
+      const ANIMATION_PARAMS = {
+        duration: 10,
+        x: -scrollWidth,
+        ease: "none",
+        repeat: -1
+      }
+
+      timeline?.kill(); // Stop current timeline
+      timeline = gsap.timeline(); // Create new timeline
+      timeline.set(".scrolls .scroll", { x: 0 }); // Set scroll back to start
+      timeline.to(".scrolls .scroll", ANIMATION_PARAMS); // Animate
+    }
+  </script>
 </body>
 </html>
